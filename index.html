@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="currencyConverterApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div ng-controller="CurrencyConverterController" class="converter-container">
+        <h1>Currency Converter</h1>
+        <div class="form-group">
+            <label for="fromCurrency">From:</label>
+            <select id="fromCurrency" ng-model="fromCurrency" ng-options="currency for currency in currencies"></select>
+        </div>
+        <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" ng-model="amount">
+        </div>
+        <div class="form-group">
+            <label for="toCurrency">To:</label>
+            <select id="toCurrency" ng-model="toCurrency" ng-options="currency for currency in currencies"></select>
+        </div>
+        <button ng-click="convert()">Convert</button>
+        <p ng-show="result">Result: {{ result }}</p>
+    </div>
+</body>
+</html>
